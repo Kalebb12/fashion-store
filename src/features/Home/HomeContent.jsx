@@ -5,7 +5,7 @@ import Slider from "../../components/slider"
 const HomeContent = () => {
   const {
     isPending,
-    data: products,
+    data: {products ,count} = {},
     error,
   } = useQuery({
     queryKey: ["products"],
@@ -15,7 +15,7 @@ const HomeContent = () => {
     <main className="flex flex-col px-5">
       <div className="flex items-center gap-2">
         <h1>New This week</h1>
-        <sup className="font-extrabold text-[20px]">(x)</sup>
+        <sup className="font-extrabold text-[20px]">({count})</sup>
       </div>
 
       <Slider pending={isPending }>

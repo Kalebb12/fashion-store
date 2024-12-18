@@ -20,6 +20,14 @@ button:disabled{
   cursor: not-allowed;
 }
 
+button:active{
+  scale: 0.99;
+}
+
+select{
+  cursor: pointer;
+}
+
 #scroll-container::-webkit-scrollbar {
   display: none;
 }

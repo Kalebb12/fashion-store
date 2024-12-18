@@ -1,5 +1,6 @@
 import { CiHeart } from "react-icons/ci";
 import { FiUser } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const IconWrapper = ({ children }) => {
   return (
@@ -13,8 +14,8 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between px-5 py-5">
       <div className="flex gap-5">
-        <a href="#">Home</a>
-        <a href="#">Collection</a>
+        <Link to="/">Home</Link>
+        <Link to="#">Collection</Link>
         <a href="#">New</a>
       </div>
       <img src="/logo.png" alt="Fasion store logo" />

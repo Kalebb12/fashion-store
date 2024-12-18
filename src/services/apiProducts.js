@@ -1,12 +1,29 @@
 import supabase from "./supabase";
 
 export const getProducts = async () => {
-  let { data: products, error} = await supabase.from("products").select("*");
-  console.log(products)
-  if (error){ 
-    console.log(error.message)
-    throw new Error(error.message)
-  };
+  let {
+    data: products,
+    error,
+    count,
+  } = await supabase.from("products").select("*", { count: "exact" });
+  if (error) {
+    console.error(error.message);
+    throw new Error(error.message);
+  }
 
-  return products
+  return { products, count };
+};
+
+export const getProductById = async (id) => {
+  let { data: product, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("id", id);
+
+    if(error){
+      console.error(error.message);
+      throw new Error(error.message);
+    }
+
+    return product[0]
 };

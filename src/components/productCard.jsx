@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const Productard = ({ product }) => {
   return (
-    <div className="w-[300px] min-w-[300px]">
+    <Link to={`/product/${product.id}`} className="w-[300px] min-w-[300px]">
       <img
         src={product.img}
         alt={product.productName}
@@ -11,9 +13,9 @@ const Productard = ({ product }) => {
       </p>
       <div className="flex items-center justify-between font-medium text-[14px]">
         <p className="truncate">{product.productName}</p>
-        <p>{product.price}</p>
+        <p>${product.price}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
