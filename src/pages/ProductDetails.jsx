@@ -52,7 +52,7 @@ const ProductDetails = () => {
         </div>
 
         <button className="w-full bg-[#d9d9d9] px-4 py-2 font-medium">
-          Add
+          Add to cart
         </button>
       </div>
     </div>
